@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ape Escape - East African Retreats Booking</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f8f8f8; line-height: 1.6; color: #333; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://irp.cdn-website.com/a26859e2/dms3rep/multi/2-8049628e.jpeg') center/cover; height: 450px; display: flex; align-items: center; padding-left: 80px; }
+        .hero h1 { font-size: 1.4em; font-weight: 300; letter-spacing: 8px; text-transform: uppercase; color: #000000; text-shadow: none; text-align: left; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2em; color: #2c2c2c; font-weight: 200; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 12px; }
+        .section-title p { color: #888; font-size: 1em; font-weight: 300; letter-spacing: 1px; }
+        .calendar-section { background: white; padding: 60px 50px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 60px; }
+        .calendar-legend { display: flex; justify-content: center; gap: 50px; margin-bottom: 50px; font-size: 14px; color: #666; font-weight: 300; }
+        .legend-item { display: flex; align-items: center; gap: 12px; }
+        .legend-color { width: 24px; height: 24px; border-radius: 2px; border: 1px solid #ddd; }
+        .available { background: #ffffff; }
+        .unavailable { background: #cdb993; }
+        .form-section { background: white; padding: 60px 50px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .form-section .section-title h2 { font-size: 1.8em; letter-spacing: 4px; }
+        .booking-form { max-width: 700px; margin: 0 auto; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 32px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        label { font-weight: 500; color: #333; margin-bottom: 12px; font-size: 0.88em; letter-spacing: 0.8px; text-transform: uppercase; }
+        label .required { color: #c9a56a; margin-left: 4px; }
+        input, textarea, select { padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 2px; font-size: 1em; font-family: inherit; transition: all 0.2s ease; background: #fafafa; font-weight: 300; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #cdb993; background: white; }
+        textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+        .submit-btn { background: #cdb993; color: white; padding: 16px 50px; border: none; border-radius: 2px; font-size: 0.95em; font-weight: 400; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; width: 100%; margin-top: 20px; text-transform: uppercase; }
+        .submit-btn:hover { background: #b8a582; letter-spacing: 3px; }
+        .submit-btn:active { transform: scale(0.98); }
+        .submit-btn:disabled { background: #d4d4d4; cursor: not-allowed; letter-spacing: 2px; }
+        .validation-error { color: #c9615a; font-size: 0.85em; margin-top: 6px; display: none; font-weight: 400; }
+        .success-message { display: none; background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center; font-size: 1.1em; }
+        .error-message { display: none; background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+        .footer { text-align: center; padding: 50px 20px; color: #999; font-size: 0.85em; border-top: 1px solid #e8e8e8; margin-top: 80px; font-weight: 300; letter-spacing: 0.5px; }
+        @media (max-width: 768px) {
+            .hero { height: 300px; padding-left: 30px; }
+            .hero h1 { font-size: 1em; letter-spacing: 5px; }
+            .calendar-section, .form-section { padding: 40px 25px; }
+            .section-title h2 { font-size: 1.6em; letter-spacing: 4px; }
+            .form-row { grid-template-columns: 1fr; gap: 24px; }
+            .calendar-legend { flex-direction: column; align-items: center; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Stay With Us</h1>
+    </div>
+
+    <div class="container">
+        <div class="calendar-section">
+            <div class="section-title">
+                <h2>The Ape Escape</h2>
+                <p>Availability Calendar</p>
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item"><div class="legend-color available"></div><span>Available</span></div>
+                <div class="legend-item"><div class="legend-color unavailable"></div><span>Unavailable</span></div>
+            </div>
+            <div style="min-height: 400px;">
+                <a class="tokeet-calendar-widget" href="https://www.tokeet.com" 
+                   data-calendar-endpoint="https://calendars.tokeet.com" 
+                   data-rental-id="874fa243-e8fb-4668-ad20-7da0165348e3-tk2" 
+                   data-rental-account="1766159551.4126" 
+                   data-calendar-months="3" 
+                   data-available-color="#ffffff" 
+                   data-unavailable-color="#cdb993" 
+                   data-font-family="Arial" 
+                   data-font-size="14px" 
+                   data-sunday-first="true">Loading Calendar...</a>
+                <script src="https://widgets.tokeet.com/bcalendar_setup.min.js"></script>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="section-title">
+                <h2>East African Retreats</h2>
+                <p>Booking Portal</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✓ Thank you! Your booking inquiry has been submitted successfully. We will contact you shortly.
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                There was an error sending your inquiry. Please try again or contact us directly at stay@the-ape-escape.com
+            </div>
+
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group full-width">
+                    <label for="guestName">Guest Name<span class="required">*</span></label>
+                    <input type="text" id="guestName" name="guest_name" required placeholder="Full name of the guest">
+                    <span class="validation-error" id="guestNameError">Please enter a guest name</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="arrival">Arrival Date<span class="required">*</span></label>
+                        <input type="date" id="arrival" name="arrival_date" required>
+                        <span class="validation-error" id="arrivalError">Please select arrival date</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departure">Departure Date<span class="required">*</span></label>
+                        <input type="date" id="departure" name="departure_date" required>
+                        <span class="validation-error" id="departureError">Please select departure date</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adults">Adults<span class="required">*</span></label>
+                        <select id="adults" name="adults" required>
+                            <option value="">Select...</option>
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                            <option value="5">5 Adults</option>
+                            <option value="6">6 Adults</option>
+                            <option value="7">7 Adults</option>
+                            <option value="8">8 Adults</option>
+                            <option value="9">9 Adults</option>
+                            <option value="10">10 Adults</option>
+                        </select>
+                        <span class="validation-error" id="adultsError">Please select number of adults</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children">Children</label>
+                        <select id="children" name="children">
+                            <option value="0">No Children</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                            <option value="3">3 Children</option>
+                            <option value="4">4 Children</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Message / Special Requests</label>
+                    <textarea id="message" name="message" placeholder="Any special requests or questions?"></textarea>
+                </div>
+
+                <span class="validation-error" id="totalGuestsError" style="display: none; margin-bottom: 20px; text-align: center; font-size: 1em;">Maximum 14 guests total (adults + children)</span>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>The Ape Escape | Kenya</p>
+        <p style="margin-top: 10px;">Managed by East African Retreats</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+        const adultsSelect = document.getElementById('adults');
+        const childrenSelect = document.getElementById('children');
+        const totalGuestsError = document.getElementById('totalGuestsError');
+
+        // Validate guest count
+        function validateGuestCount() {
+            const adults = parseInt(adultsSelect.value) || 0;
+            const children = parseInt(childrenSelect.value) || 0;
+            const total = adults + children;
+
+            if (total > 14) {
+                totalGuestsError.style.display = 'block';
+                submitBtn.disabled = true;
+                return false;
+            } else {
+                totalGuestsError.style.display = 'none';
+                submitBtn.disabled = false;
+                return true;
+            }
+        }
+
+        adultsSelect.addEventListener('change', validateGuestCount);
+        childrenSelect.addEventListener('change', validateGuestCount);
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Validate
+            if (!validateGuestCount()) {
+                return;
+            }
+
+            // Hide messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Add CC email for production
+            data.cc_email = 'info@eastafricanretreats.com';
+
+            try {
+                const response = await fetch('send-booking.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    successMsg.style.display = 'block';
+                    form.reset();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error(result.error || 'Unknown error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorMsg.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Booking Inquiry';
+            }
+        });
+    </script>
+</body>
+</html>
